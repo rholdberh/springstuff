@@ -9,9 +9,9 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beansbasics.xml");
 
-        Person person1 =  (Person) context.getBean("person");
-
-        Person person2 =  (Person) context.getBean("person");
+        Person person1 =  (Person) context.getBean("person2");
+//
+//        Person person2 =  (Person) context.getBean("person");
 
 
         System.out.println(person1.toString());

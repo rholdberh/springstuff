@@ -7,16 +7,32 @@
 
     <bean id="person"
           class="com.learningspring.basics.Person"
-          scope="singleton"><!--singleton by default-->
-        <constructor-arg value="777"></constructor-arg>
-        <constructor-arg value="Roman"></constructor-arg>
-        <property name="address" ref="address"></property>
+          scope="singleton"
+          factory-method="getInstance"><!--singleton by default-->
+        <constructor-arg value="777"/>
+        <constructor-arg value="Roman"/>
+        <property name="address" ref="address"/>
     </bean>
+
+    <bean id="person2"
+          class="com.learningspring.basics.Person"
+          scope="singleton"
+          factory-method="createPerson"
+          factory-bean="personfactory">
+        <constructor-arg value="888"/>
+        <constructor-arg value="Roman2"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+    <bean id="personfactory"
+          class="com.learningspring.basics.PersonFactory">
+    </bean>
+
     <bean id="address"
           class="com.learningspring.basics.Address"
           init-method="onCreate">
-        <constructor-arg name="street" value="Miloticka"></constructor-arg>
-        <constructor-arg name="streetNumber" value="12b"></constructor-arg>
+        <constructor-arg name="street" value="Miloticka"/>
+        <constructor-arg name="streetNumber" value="12b"/>
     </bean>
 
 

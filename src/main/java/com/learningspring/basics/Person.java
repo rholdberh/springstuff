@@ -6,14 +6,23 @@ public class Person {
     private String name;
     private Address address;
 
+
+    public Person() {
+    }
+
     public Person(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
 
-    public void speak() {
+    public static Person getInstance(int id, String name) {
+        System.out.println("Person: Person created using factory method.");
+        return new Person(id, name);
+    }
 
+
+    public void speak() {
         System.out.println("I am new person");
     }
 
