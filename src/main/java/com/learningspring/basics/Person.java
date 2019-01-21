@@ -12,13 +12,21 @@ public class Person {
     }
 
 
-    public void speak(){
+    public void speak() {
 
         System.out.println("I am new person");
     }
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public void init() {
+        System.out.println("Person created: " + this);
+    }
+
+    public void destroy() {
+        System.out.println("Person destroyed");
     }
 
     @Override

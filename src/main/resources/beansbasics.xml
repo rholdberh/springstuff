@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
 
     <bean id="person"
-        class = "com.learningspring.basics.Person">
+          class="com.learningspring.basics.Person"
+          scope="singleton"><!--singleton by default-->
         <constructor-arg value="777"></constructor-arg>
         <constructor-arg value="Roman"></constructor-arg>
         <property name="address" ref="address"></property>
     </bean>
-    <bean id="address" class="com.learningspring.basics.Address">
+    <bean id="address"
+          class="com.learningspring.basics.Address"
+          init-method="onCreate">
         <constructor-arg name="street" value="Miloticka"></constructor-arg>
         <constructor-arg name="streetNumber" value="12b"></constructor-arg>
     </bean>

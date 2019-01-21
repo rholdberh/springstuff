@@ -8,14 +8,16 @@ public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beansbasics.xml");
-        Person person =  (Person) context.getBean("person");
-        person.speak();
 
-//        Address address = (Address) context.getBean("address");
-//
-//
-//        System.out.println(address.toString());
-        System.out.println(person.toString());
+        Person person1 =  (Person) context.getBean("person");
+
+        Person person2 =  (Person) context.getBean("person");
+
+
+        System.out.println(person1.toString());
+
+        ((ClassPathXmlApplicationContext) context).close();
+
     }
 
 }
