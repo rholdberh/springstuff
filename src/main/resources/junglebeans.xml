@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+
+    <bean id="jungle"
+          class="com.learningspring.basics.Jungle">
+        <property name="largest">
+            <bean id="elephant" class="com.learningspring.basics.Animal">
+                <property name="name" value="elephant name"></property>
+                <property name="type" value="elephant"></property>
+            </bean>
+        </property>
+        <property name="animals" >
+            <list>
+                <ref bean="lion"></ref>
+                <ref bean="monkey"></ref>
+                <bean id="cat" class="com.learningspring.basics.Animal">
+                    <property name="name" value="cat name"></property>
+                    <property name="type" value="cat"></property>
+                </bean>
+            </list>
+        </property>
+
+
+    </bean>
+
+    <bean id="lion" class="com.learningspring.basics.Animal">
+        <property name="name" value="lion name"></property>
+        <property name="type" value="lion"></property>
+    </bean>
+    <bean id="monkey" class="com.learningspring.basics.Animal">
+        <property name="name" value="monkey name"></property>
+        <property name="type" value="monkey"></property>
+    </bean>
+
+    <bean id="junglemap" class="com.learningspring.basics.JungleMap">
+        <property name="foods">
+            <props>
+                <prop key="lion">smallAnimals</prop>
+            </props>
+        </property>
+        <property name="animals">
+            <map>
+                <entry key="lion" value-ref="lion">
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+</beans>

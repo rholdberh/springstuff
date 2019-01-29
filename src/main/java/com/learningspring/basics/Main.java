@@ -9,15 +9,23 @@ public class Main {
 
 
 
+        ApplicationContext context = new ClassPathXmlApplicationContext("junglebeans.xml");
+        JungleMap jungle =(JungleMap) context.getBean("junglemap");
+        System.out.println(jungle);
 
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("fruitbasketbean.xml");
 
-        Basket basket =  (Basket) context.getBean("basket");
 
-        System.out.println(basket);
 
-        ((ClassPathXmlApplicationContext) context).close();
+
+
+//        ApplicationContext context = new ClassPathXmlApplicationContext("fruitbasketbean.xml");
+//
+//        Basket basket =  (Basket) context.getBean("basket");
+//
+//        System.out.println(basket);
+//
+//        ((ClassPathXmlApplicationContext) context).close();
 
 
 //
