@@ -3,10 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-init-method="init"
-       default-destroy-method="destroy">
+       default-destroy-method="destroy"
+       default-autowire="byType"><!--default autowiring-->
 
     <bean id="logger"
-          class="com.learningspring.autowiring.Logger" autowire="constructor"> <!-- makes initialization by type-->
+          class="com.learningspring.autowiring.Logger"> <!-- makes initialization by type-->
 
     </bean>
     <bean id="consoleWriter"
@@ -14,6 +15,10 @@
 
     </bean>
     <bean id="fileWriter"
+          class="com.learningspring.autowiring.FileWriter">
+    </bean>
+    <bean id="invalid"
+          autowire-candidate="false"
           class="com.learningspring.autowiring.FileWriter">
     </bean>
 
