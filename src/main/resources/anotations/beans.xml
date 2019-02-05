@@ -11,23 +11,19 @@
 
     </bean>
 
-    <bean id="squirrel"
-          class="com.learningspring.anotations.Logger">
-    </bean>
-
-
-    <bean id="consoleWriter" class="com.learningspring.anotations.ConsoleWriter">
+    <bean id="invalidConsoleWriter" class="com.learningspring.anotations.ConsoleWriter">
         <property name="bla" value="valueFromBeanProperty"></property>
 
     </bean>
     <bean id="validConsoleWiriter" class="com.learningspring.anotations.ConsoleWriter">
-        <property name="bla" value="valueFromValidBeanPropert"></property>
+        <property name="bla" value="!!!validValueFromBeanPropert"></property>
         <qualifier value="toconsole"></qualifier>
 
     </bean>
 
-    <bean id="fileWriter"
+    <bean id="nameForTheFileWrtiterBean"
           class="com.learningspring.anotations.FileWriter">
+        <qualifier value="filewriter"></qualifier>
     </bean>
 
     <context:annotation-config></context:annotation-config>

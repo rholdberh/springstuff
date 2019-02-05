@@ -1,7 +1,6 @@
 package com.learningspring.anotations;
 
 
-
 public class ConsoleWriter implements LogWriter {
 
     private String bla;

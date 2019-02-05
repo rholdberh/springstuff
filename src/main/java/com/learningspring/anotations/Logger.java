@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Logger {
     private ConsoleWriter consoleWriter;
-    private FileWriter fileWriter;
+    private LogWriter fileWriter;
 
 
 //
@@ -23,7 +23,8 @@ public class Logger {
     }
 
     @Autowired
-    public void setFileWriter(FileWriter fileWriter) {
+    @Qualifier("filewriter")
+    public void setFileWriter(LogWriter fileWriter) {
         this.fileWriter = fileWriter;
     }
 
