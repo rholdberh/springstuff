@@ -10,19 +10,26 @@
           class="com.learningspring.anotations.Logger">
 
     </bean>
-    <bean id="consoleWriter"
-          class="com.learningspring.anotations.ConsoleWriter">
-        <!--<constructor-arg value="valueFrombean"></constructor-arg>-->
+
+    <bean id="squirrel"
+          class="com.learningspring.anotations.Logger">
+    </bean>
+
+
+    <bean id="consoleWriter" class="com.learningspring.anotations.ConsoleWriter">
         <property name="bla" value="valueFromBeanProperty"></property>
 
     </bean>
+    <bean id="validConsoleWiriter" class="com.learningspring.anotations.ConsoleWriter">
+        <property name="bla" value="valueFromValidBeanPropert"></property>
+        <qualifier value="toconsole"></qualifier>
+
+    </bean>
+
     <bean id="fileWriter"
           class="com.learningspring.anotations.FileWriter">
     </bean>
-    <bean id="invalid"
-          autowire-candidate="false"
-          class="com.learningspring.anotations.FileWriter">
-    </bean>
+
     <context:annotation-config></context:annotation-config>
 
 </beans>

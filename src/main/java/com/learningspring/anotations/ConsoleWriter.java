@@ -1,12 +1,12 @@
 package com.learningspring.anotations;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class ConsoleWriter implements LogWriter {
 
     private String bla;
 
-    @Autowired
+
     public void setBla(String bla) {
         this.bla = bla;
     }
