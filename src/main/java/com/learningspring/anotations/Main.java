@@ -9,6 +9,8 @@ public class Main {
         Logger logger = (Logger) context.getBean("logger");
         logger.writeFile("blafile");
         logger.writeConsole("blaconsole");
+        logger.writeGod("Hi");
+        logger.writeWife("Hi wife");
 
     }
 }

@@ -12,18 +12,23 @@
     </bean>
 
     <bean id="invalidConsoleWriter" class="com.learningspring.anotations.ConsoleWriter">
-        <property name="bla" value="valueFromBeanProperty"></property>
+        <property name="bla" value="valueFromBeanProperty"/>
 
     </bean>
     <bean id="validConsoleWiriter" class="com.learningspring.anotations.ConsoleWriter">
-        <property name="bla" value="!!!validValueFromBeanPropert"></property>
-        <qualifier value="toconsole"></qualifier>
+        <property name="bla" value="!!!validValueFromBeanPropert"/>
+        <qualifier value="toconsole"/>
 
     </bean>
 
     <bean id="nameForTheFileWrtiterBean"
           class="com.learningspring.anotations.FileWriter">
-        <qualifier value="filewriter"></qualifier>
+        <qualifier value="filewriter"/>
+    </bean>
+
+    <bean id="someCrazyName"
+          class="com.learningspring.anotations.GodWriter">
+
     </bean>
 
     <context:annotation-config></context:annotation-config>
