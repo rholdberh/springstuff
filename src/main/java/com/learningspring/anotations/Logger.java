@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class Logger {
     private ConsoleWriter consoleWriter;
@@ -14,6 +15,7 @@ public class Logger {
     private GodWriter godWriter;
 
     @Inject
+    @Named(value = "nameForWifeWriter")
     private WifeWriter wifeWriter;
 
     public void setWifeWriter(WifeWriter wifeWriter) {
@@ -58,7 +60,7 @@ public class Logger {
 
     }
     void writeWife(String text) {
-        writeWife().write(text);
+        wifeWriter.write(text);
 
     }
 

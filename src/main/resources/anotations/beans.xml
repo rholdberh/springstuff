@@ -31,6 +31,15 @@
 
     </bean>
 
+    <bean id="nameForWifeWriter"
+          class="com.learningspring.anotations.WifeWriter">
+
+    </bean>
+    <bean id="invalidNameForWifeWriter"
+          class="com.learningspring.anotations.WifeWriter">
+
+    </bean>
+
     <context:annotation-config></context:annotation-config>
 
 </beans>
