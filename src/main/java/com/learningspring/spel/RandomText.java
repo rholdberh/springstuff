@@ -1,7 +1,12 @@
 package com.learningspring.spel;
 
+import org.springframework.stereotype.Component;
+
+import javax.inject.Named;
 import java.util.Random;
 
+@Component
+@Named(value = "callmetogettext")
 public class RandomText {
     private static String[] texts = {
             "some text",

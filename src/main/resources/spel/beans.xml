@@ -7,16 +7,18 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 
-    <bean id="nameForRobot"
-          class="com.learningspring.spel.Robot">
-        <property name="id" value="#{nameForRandomText.getText(1)?.length()}"></property>
-        <property name="speech" value="#{nameForRandomText.getText(1)}"></property>
+    <!--<bean id="nameForRobot"-->
+          <!--class="com.learningspring.spel.Robot">-->
+        <!--<property name="id" value="#{nameForRandomText.getText(1)?.length()}"></property>-->
+        <!--<property name="speech" value="#{nameForRandomText.getText(1)}"></property>-->
 
 
-    </bean>
-    <bean id="nameForRandomText"
-          class="com.learningspring.spel.RandomText">
+    <!--</bean>-->
+    <!--<bean id="nameForRandomText"-->
+          <!--class="com.learningspring.spel.RandomText">-->
 
-    </bean>
+    <!--</bean>-->
+
+    <context:component-scan base-package="com.learningspring.spel"></context:component-scan>
 
 </beans>
